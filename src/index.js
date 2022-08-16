@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React,{useState} from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 // import { Saludar, UserCard } from "./Saludar";
 import Product, { Navbar } from "./Product";
@@ -10,8 +10,6 @@ import { Saludar } from "./Saludar";
 import { Posts } from "./Posts";
 
 const root = ReactDOM.createRoot(document.getElementById("root")); // app incializada
-
-
 
 const users = [
   {
@@ -26,25 +24,33 @@ const users = [
   },
 ];
 
-function Contador(){
+function Contador() {
+
+
+useEffect(() => {
+  console.log("render")
+}, [])
+
   const [mensaje, setMensaje] = useState(""); // estado
-  return(
+  return (
     <div>
-      <input onChange={e => setMensaje(e.target.value)} />
-      <button onClick={() => {
-        setMensaje('');
-        alert(mensaje);
-      }}>
+      <input onChange={(e) => setMensaje(e.target.value)} />
+      <button
+        onClick={() => {
+          setMensaje("");
+          alert(mensaje);
+        }}
+      >
         borrar mensaje
       </button>
-      <br/>
+      <br />
       {mensaje}
     </div>
-  )
+  );
 }
 
 root.render(
   <>
-  <Contador/>
-    </>
+    <Contador />
+  </>
 ); // renderizar el componente en el DOM
