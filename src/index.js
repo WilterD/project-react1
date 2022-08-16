@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React,{useState} from "react";
 import ReactDOM from "react-dom/client";
 // import { Saludar, UserCard } from "./Saludar";
 import Product, { Navbar } from "./Product";
@@ -10,6 +10,8 @@ import { Saludar } from "./Saludar";
 import { Posts } from "./Posts";
 
 const root = ReactDOM.createRoot(document.getElementById("root")); // app incializada
+
+
 
 const users = [
   {
@@ -24,27 +26,22 @@ const users = [
   },
 ];
 
+function Contador(){
+  const [contador, setContador] = useState(0); // estado
+  return(
+    <>
+      <h1>
+    Contador: {contador}
+  </h1>
+  <button onClick={() => {
+    setContador(20);
+  }}>sumar</button>
+    </>
+  )
+}
+
 root.render(
   <>
-    {users.map((user, i) => {
-      return <div key={i}>
-      <h1 >{user.name}</h1>
-      <img src={user.image} />
-      </div>
-    })}
-
-    {/* <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        console.log("enviado");
-      }}
-    >
-      <h1>hola</h1>
-      <button>enviar</button>
-    </form>
-
-    <Posts /> */}
-  </>
+  <Contador/>
+    </>
 ); // renderizar el componente en el DOM
-
-// root.render(<h1>Hola Mundo</h1>); // renderizado de la app
