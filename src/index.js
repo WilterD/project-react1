@@ -1,22 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Saludar, UserCard } from "./Saludar";
+import Product, { Navbar } from "./Product";
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root")); // app incializada
 
-function Saludar() {
-  function sumar(a, b) {
-    return a + b;
-  }
-
-  return <h1>{sumar(1, 2)}</h1>;
-}
-
 root.render(
   <div>
-    <Saludar />
-    <Saludar />
-    <Saludar />
-    <Saludar />
+    <UserCard
+      saludo={function(){alert('hola')}}
+      name="nombre"
+      amount={3000}
+      casado={true}
+      puntos={[1, 2, 3, 4]}
+      direccion={{ calle: "Calle", ciudad: "new york" }}
+    />
   </div>
 ); // renderizar el componente en el DOM
 
