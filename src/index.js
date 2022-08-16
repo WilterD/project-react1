@@ -27,11 +27,12 @@ const users = [
 function Contador() {
 
 
-useEffect(() => {
-  console.log("render")
-}, [])
-
+  
   const [mensaje, setMensaje] = useState(""); // estado
+  const [contador, setContador] = useState(0); // estado
+  useEffect(() => {
+    console.log("render")
+  }, [contador]); // si contador cambia, ejecuta la funcion
   return (
     <div>
       <input onChange={(e) => setMensaje(e.target.value)} />
@@ -45,6 +46,13 @@ useEffect(() => {
       </button>
       <br />
       {mensaje}
+      <hr/>
+      <button onClick={() => {
+        setContador(contador + 1);
+      }}>
+        incrementar
+      </button>
+      {contador}
     </div>
   );
 }
