@@ -11,10 +11,17 @@ import {Saludar} from "./Saludar";
 const root = ReactDOM.createRoot(document.getElementById("root")); // app incializada
 
 root.render(
-  <div>
-    <TaskCard ready={true}/>
-    <Saludar />
-  </div>
+  <>
+
+  <form onSubmit={(e) => {
+    e.preventDefault();
+    console.log("enviado");
+  }}>
+    <h1>hola</h1>
+    <button>enviar</button>
+  </form>
+    
+  </>
 ); // renderizar el componente en el DOM
 
 // root.render(<h1>Hola Mundo</h1>); // renderizado de la app

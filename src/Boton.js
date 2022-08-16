@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 
 export function Boton({text}) {
-  return <button>
+  return <div><button onClick={function(){
+    console.log("escribiendo");
+  }}>
     <h1>{text}</h1>
-    </button>;
+    </button>
+    <input onChange={miFuncion} ></input>
+    </div>;
 }
 
 Boton.prototype = {
