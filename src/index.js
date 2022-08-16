@@ -31,8 +31,11 @@ function Contador(){
   return(
     <div>
       <input onChange={e => setMensaje(e.target.value)} />
-      <button>
-        guardar
+      <button onClick={() => {
+        setMensaje('');
+        alert(mensaje);
+      }}>
+        borrar mensaje
       </button>
       <br/>
       {mensaje}
