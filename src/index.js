@@ -34,8 +34,14 @@ function Contador(){
     Contador: {contador}
   </h1>
   <button onClick={() => {
-    setContador(20);
+    setContador(contador+1);
   }}>sumar</button>
+
+  <button onClick={() => {
+    setContador(contador-1);
+  }}>
+  Restar
+  </button>
     </>
   )
 }
