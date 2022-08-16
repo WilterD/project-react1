@@ -27,22 +27,16 @@ const users = [
 ];
 
 function Contador(){
-  const [contador, setContador] = useState(0); // estado
+  const [mensaje, setMensaje] = useState(""); // estado
   return(
-    <>
-      <h1>
-    Contador: {contador}
-  </h1>
-  <button onClick={() => {
-    setContador(contador+1);
-  }}>sumar</button>
-
-  <button onClick={() => {
-    setContador(contador-1);
-  }}>
-  Restar
-  </button>
-    </>
+    <div>
+      <input onChange={e => setMensaje(e.target.value)} />
+      <button>
+        guardar
+      </button>
+      <br/>
+      {mensaje}
+    </div>
   )
 }
 
