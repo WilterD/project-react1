@@ -1,6 +1,7 @@
-const Posts = () =>{
-    return <ul>
-        <li>titulo 1</li>
-        <li>titulo 2</li>
-    </ul>
+export const Posts = () =>{
+    return <button onClick={() => {
+        fetch('https://jsonplaceholder.typicode.com/posts').then(response => response.json()).then(json => {
+            console.log(json);
+        })
+    }}>traer datos</button>
 }

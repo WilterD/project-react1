@@ -7,6 +7,7 @@ import Product, { Navbar } from "./Product";
 import {Boton} from "./Boton";
 import {TaskCard} from "./Task";
 import {Saludar} from "./Saludar";
+import {Posts} from './Posts'
 
 const root = ReactDOM.createRoot(document.getElementById("root")); // app incializada
 
@@ -20,6 +21,8 @@ root.render(
     <h1>hola</h1>
     <button>enviar</button>
   </form>
+
+  <Posts />
     
   </>
 ); // renderizar el componente en el DOM
